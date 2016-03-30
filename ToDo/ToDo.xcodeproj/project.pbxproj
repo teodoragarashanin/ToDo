@@ -15,6 +15,7 @@
 		D55067271CA9670400B715A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D55067261CA9670400B715A2 /* Assets.xcassets */; };
 		D550672A1CA9670400B715A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D55067281CA9670400B715A2 /* LaunchScreen.storyboard */; };
 		D55067371CA974C300B715A2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D55067361CA974C300B715A2 /* CoreLocation.framework */; };
+		D5FD55EE1CAC061100D89F19 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5FD55ED1CAC061100D89F19 /* LogInViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,8 @@
 		D55067291CA9670400B715A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D550672B1CA9670400B715A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D55067361CA974C300B715A2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		D5FD55EC1CAC061100D89F19 /* LogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
+		D5FD55ED1CAC061100D89F19 /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +117,8 @@
 			children = (
 				D550671D1CA9670400B715A2 /* ViewController.h */,
 				D550671E1CA9670400B715A2 /* ViewController.m */,
+				D5FD55EC1CAC061100D89F19 /* LogInViewController.h */,
+				D5FD55ED1CAC061100D89F19 /* LogInViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -198,6 +203,7 @@
 			files = (
 				D550671F1CA9670400B715A2 /* ViewController.m in Sources */,
 				D550671C1CA9670400B715A2 /* AppDelegate.m in Sources */,
+				D5FD55EE1CAC061100D89F19 /* LogInViewController.m in Sources */,
 				D55067191CA9670400B715A2 /* main.m in Sources */,
 				D55067251CA9670400B715A2 /* ToDo.xcdatamodeld in Sources */,
 			);
@@ -348,6 +354,7 @@
 				D55067301CA9670400B715A2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
