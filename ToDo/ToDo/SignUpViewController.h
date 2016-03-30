@@ -1,12 +1,12 @@
 //
-//  LogInViewController.m
+//  SignUpViewController.h
 //  ToDo
 //
 //  Created by Cubes School 5 on 3/30/16.
 //  Copyright © 2016 Cubes School 5. All rights reserved.
 //
 
-#import "LogInViewController.h"
+#import <UIKit/UIKit.h>
 
-@implementation LogInViewController
+@interface SignUpViewController : UIViewController
 @end
