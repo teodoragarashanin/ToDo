@@ -9,4 +9,8 @@
 #import "SignUpViewController.h"
 
 @implementation SignUpViewController
+
+- (IBAction)backButtonTapped:(UIButton *)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end

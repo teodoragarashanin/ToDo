@@ -6,11 +6,11 @@
 //  Copyright © 2016 Djuro Alfirevic. All rights reserved.
 //
 
-#import "LoginViewController.h"
+#import "LogInViewController.h"
 
 #define kConstant 50.0
 
-@interface LoginViewController() <UITextFieldDelegate>
+@interface LogInViewController() <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *usernameImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *passwordImageView;
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
@@ -19,7 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIView *logoView;
 @end
 
-@implementation LoginViewController
+@implementation LogInViewController
 
 #pragma mark - Private API
 
