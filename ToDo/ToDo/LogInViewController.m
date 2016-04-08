@@ -17,9 +17,14 @@
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UIView *containerView;
 @property (weak, nonatomic) IBOutlet UIView *logoView;
+@property (weak, nonatomic) IBOutlet UIView *maskLogoView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicatorView;
+@property (weak, nonatomic) IBOutlet UIView *footerView;
+@property (weak, nonatomic) IBOutlet UIButton *submitButton;
 @end
 
 @implementation LogInViewController
+
 
 #pragma mark - Private API
 
@@ -40,12 +45,48 @@
     }
 }
 
+#pragma mark - Public API
+
+-(void) prepareForAnimations {
+    
+    //button
+    CGRect submitButtonFrame = self.submitButton.frame;
+    submitButtonFrame.origin.x=self.submitButton.frame.size.width;
+    self.submitButton.frame=submitButtonFrame;
+    
+    //footer
+    CGRect frame = self.footerView.frame;
+    frame.origin.y=self.view.frame.size.height;
+    self.footerView.frame=frame;
+    self.maskLogoView.layer.cornerRadius=self.maskLogoView.frame.size.width/2;
+}
+
+-(void) animate {
+    
+    
+    //button & footer & maskLogo
+    [UIView animateWithDuration:0.4 delay:0.2
+                        options:UIViewAnimationOptionCurveEaseIn
+                     animations:^{
+                        CGRect submitButtonFrame = self.submitButton.frame;
+                         submitButtonFrame.origin.x=0.0;
+                         self.submitButton.frame=submitButtonFrame;
+                         CGRect frame = self.footerView.frame;
+                         frame.origin.y=625;
+                         self.footerView.frame=frame;
+                         self.maskLogoView.alpha=0.0;
+       }            completion:nil];
+ 
+}
+
+
 #pragma mark - Actions
 
 - (IBAction)forgotPasswordButtonTapped:(UIButton *)sender {
 }
 
 - (IBAction)signInButtonTapped:(UIButton *)sender {
+    [self.activityIndicatorView startAnimating];
 }
 
 - (IBAction)signUpButtonTapped:(UIButton *)sender {
@@ -54,20 +95,29 @@
 
 #pragma mark - View lifecycle
 
+-(void) viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self prepareForAnimations];
+    [self.activityIndicatorView stopAnimating];
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self configureTextField:self.usernameTextField];
     [self configureTextField:self.passwordTextField];
+  
 }
 
 - (void)viewDidAppear:(BOOL)animated {
+    
     [super viewDidAppear:animated];
     
-    [UIView animateWithDuration:3.0 animations:^{
-        self.logoView.alpha = 0.0;
-    }];
+    [self animate];
+    
 }
+
 
 #pragma mark - UITextFieldDelegate
 
