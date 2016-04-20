@@ -10,8 +10,6 @@
 
 
 @interface TaskTableViewCell ()
-
-
 @end
 @implementation TaskTableViewCell
 @end
