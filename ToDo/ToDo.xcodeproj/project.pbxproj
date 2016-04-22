@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D50741E21CCA524B009FE61B /* WalkthroughViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D50741E11CCA524B009FE61B /* WalkthroughViewController.m */; };
 		D54776E41CBE721100B54457 /* Pad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D54776E31CBE721100B54457 /* Pad.storyboard */; };
 		D54776FF1CBE752000B54457 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D54776FD1CBE752000B54457 /* Interface.storyboard */; };
 		D54777011CBE752000B54457 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D54777001CBE752000B54457 /* Assets.xcassets */; };
@@ -83,6 +84,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D50741E01CCA524B009FE61B /* WalkthroughViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WalkthroughViewController.h; sourceTree = "<group>"; };
+		D50741E11CCA524B009FE61B /* WalkthroughViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WalkthroughViewController.m; sourceTree = "<group>"; };
 		D54776E31CBE721100B54457 /* Pad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Pad.storyboard; sourceTree = "<group>"; };
 		D54776EB1CBE74F300B54457 /* ActionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActionViewController.h; sourceTree = "<group>"; };
 		D54776EC1CBE74F300B54457 /* ActionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActionViewController.m; sourceTree = "<group>"; };
@@ -274,6 +277,8 @@
 				D5FD55ED1CAC061100D89F19 /* LogInViewController.m */,
 				D5FD55EF1CAC08F800D89F19 /* SignUpViewController.h */,
 				D5FD55F01CAC08F800D89F19 /* SignUpViewController.m */,
+				D50741E01CCA524B009FE61B /* WalkthroughViewController.h */,
+				D50741E11CCA524B009FE61B /* WalkthroughViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -432,6 +437,7 @@
 				D550671F1CA9670400B715A2 /* ViewController.m in Sources */,
 				D550671C1CA9670400B715A2 /* AppDelegate.m in Sources */,
 				D5FD55F11CAC08F800D89F19 /* SignUpViewController.m in Sources */,
+				D50741E21CCA524B009FE61B /* WalkthroughViewController.m in Sources */,
 				D5FD55EE1CAC061100D89F19 /* LogInViewController.m in Sources */,
 				D5F28A2F1CC1181700D15D23 /* TaskTableViewCell.m in Sources */,
 				D55067191CA9670400B715A2 /* main.m in Sources */,

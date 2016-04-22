@@ -13,15 +13,11 @@
 
 @interface HomeViewController () <UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *userProfileImageView;
-
 @end
 
 @implementation HomeViewController
 
-
-
 -(void) pickImage {
-    
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle: @"Choose source"
                                                                              message: nil
                                                                       preferredStyle: UIAlertControllerStyleActionSheet];
@@ -66,12 +62,12 @@
  
     
     [self presentViewController:alertController animated:YES completion:nil];
-
 }
 
 #pragma markv - View lifecycle
 
 -(void) viewDidLoad {
+    
     [super viewDidLoad];
     self.userProfileImageView.userInteractionEnabled=YES;
     UITapGestureRecognizer *tap=[[UITapGestureRecognizer alloc]initWithTarget:self
@@ -81,8 +77,23 @@
     self.userProfileImageView.clipsToBounds=YES;
     self.userProfileImageView.layer.cornerRadius=self.userProfileImageView.frame.size.width/2;
     
+    if ([[NSUserDefaults standardUserDefaults]objectForKey:USER_IMAGE]) {
+    self.userProfileImageView.image=[[UIImage alloc]initWithData:[[NSUserDefaults standardUserDefaults]objectForKey:USER_IMAGE]];
     
+    }
 
+}
+
+-(void) viewDidAppear:(BOOL)animated {
+    
+    [super viewDidAppear:animated];
+    
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:WALKTHROUGH_PRESENTED]) {
+        
+    [self performSegueWithIdentifier: @"WalkthroughSegue" sender:self];
+        
+    }
+    
 }
 
 #pragma mark - UITableViewDataSource 
@@ -138,12 +149,18 @@
 
 -(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
 
-    UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
+    UIImage *image = [info objectForKey: UIImagePickerControllerEditedImage];
     if (!image) {
         image = [info objectForKey: UIImagePickerControllerOriginalImage];
     }
     
     self.userProfileImageView.image=image;
+    
+    NSData *data = UIImageJPEGRepresentation(image, 1.0);
+    
+    [[NSUserDefaults standardUserDefaults]setObject:data forKey:USER_IMAGE];
+    [[NSUserDefaults standardUserDefaults]synchronize];
+    
     
     [picker dismissViewControllerAnimated:YES completion:nil];
 
