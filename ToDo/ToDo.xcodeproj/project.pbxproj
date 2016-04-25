@@ -26,6 +26,8 @@
 		D55067271CA9670400B715A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D55067261CA9670400B715A2 /* Assets.xcassets */; };
 		D550672A1CA9670400B715A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D55067281CA9670400B715A2 /* LaunchScreen.storyboard */; };
 		D55067371CA974C300B715A2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D55067361CA974C300B715A2 /* CoreLocation.framework */; };
+		D5D02DB51CCE3D4900F7FFFF /* WalkthroughCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D5D02DB41CCE3D4900F7FFFF /* WalkthroughCollectionViewCell.m */; };
+		D5D02DB81CCE439800F7FFFF /* WalkthroughItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D5D02DB71CCE439800F7FFFF /* WalkthroughItem.m */; };
 		D5F28A2F1CC1181700D15D23 /* TaskTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D5F28A2E1CC1181700D15D23 /* TaskTableViewCell.m */; };
 		D5FD55EE1CAC061100D89F19 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5FD55ED1CAC061100D89F19 /* LogInViewController.m */; };
 		D5FD55F11CAC08F800D89F19 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5FD55F01CAC08F800D89F19 /* SignUpViewController.m */; };
@@ -119,6 +121,10 @@
 		D55067291CA9670400B715A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D550672B1CA9670400B715A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D55067361CA974C300B715A2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		D5D02DB31CCE3D4900F7FFFF /* WalkthroughCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WalkthroughCollectionViewCell.h; sourceTree = "<group>"; };
+		D5D02DB41CCE3D4900F7FFFF /* WalkthroughCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WalkthroughCollectionViewCell.m; sourceTree = "<group>"; };
+		D5D02DB61CCE439800F7FFFF /* WalkthroughItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WalkthroughItem.h; sourceTree = "<group>"; };
+		D5D02DB71CCE439800F7FFFF /* WalkthroughItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WalkthroughItem.m; sourceTree = "<group>"; };
 		D5F28A2D1CC1181700D15D23 /* TaskTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskTableViewCell.h; sourceTree = "<group>"; };
 		D5F28A2E1CC1181700D15D23 /* TaskTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskTableViewCell.m; sourceTree = "<group>"; };
 		D5F28A301CC1183F00D15D23 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -279,6 +285,10 @@
 				D5FD55F01CAC08F800D89F19 /* SignUpViewController.m */,
 				D50741E01CCA524B009FE61B /* WalkthroughViewController.h */,
 				D50741E11CCA524B009FE61B /* WalkthroughViewController.m */,
+				D5D02DB31CCE3D4900F7FFFF /* WalkthroughCollectionViewCell.h */,
+				D5D02DB41CCE3D4900F7FFFF /* WalkthroughCollectionViewCell.m */,
+				D5D02DB61CCE439800F7FFFF /* WalkthroughItem.h */,
+				D5D02DB71CCE439800F7FFFF /* WalkthroughItem.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -437,11 +447,13 @@
 				D550671F1CA9670400B715A2 /* ViewController.m in Sources */,
 				D550671C1CA9670400B715A2 /* AppDelegate.m in Sources */,
 				D5FD55F11CAC08F800D89F19 /* SignUpViewController.m in Sources */,
+				D5D02DB51CCE3D4900F7FFFF /* WalkthroughCollectionViewCell.m in Sources */,
 				D50741E21CCA524B009FE61B /* WalkthroughViewController.m in Sources */,
 				D5FD55EE1CAC061100D89F19 /* LogInViewController.m in Sources */,
 				D5F28A2F1CC1181700D15D23 /* TaskTableViewCell.m in Sources */,
 				D55067191CA9670400B715A2 /* main.m in Sources */,
 				D5503C7A1CB7ECB00019B303 /* HomeViewController.m in Sources */,
+				D5D02DB81CCE439800F7FFFF /* WalkthroughItem.m in Sources */,
 				D55067251CA9670400B715A2 /* ToDo.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
