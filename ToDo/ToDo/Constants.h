@@ -31,4 +31,9 @@ static NSString *const USER_IMAGE               = @"USER_NAME";
 static NSString *const WALKTHROUGH_PRESENTED    = @"WALKTHROUGH_PRESENTED";
 
 
+//String and numbers
+
+#define ZERO_VALUE      0.0
+
+
 #endif /* Constants_h */

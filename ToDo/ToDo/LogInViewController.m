@@ -124,6 +124,11 @@
     
 }
 
+-(UIStatusBarStyle) preferredStatusBarStyle {
+    
+    return UIStatusBarStyleLightContent;
+    
+}
 
 #pragma mark - UITextFieldDelegate
 

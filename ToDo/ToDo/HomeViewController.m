@@ -81,8 +81,21 @@
     self.userProfileImageView.image=[[UIImage alloc]initWithData:[[NSUserDefaults standardUserDefaults]objectForKey:USER_IMAGE]];
     
     }
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self performSegueWithIdentifier:@"AboutSegue" sender:self];
+    });
+    
+    /*dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+     [self performSegueWithIdentifier:@"StatisticsSegue" sender:self];
+     });
+    */
+    
+
 
 }
+
+
 
 -(void) viewDidAppear:(BOOL)animated {
     
@@ -93,6 +106,12 @@
     [self performSegueWithIdentifier: @"WalkthroughSegue" sender:self];
         
     }
+    
+}
+
+-(UIStatusBarStyle) preferredStatusBarStyle {
+    
+    return UIStatusBarStyleLightContent;
     
 }
 
