@@ -18,6 +18,7 @@
 @implementation HomeViewController
 
 -(void) pickImage {
+    
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle: @"Choose source"
                                                                              message: nil
                                                                       preferredStyle: UIAlertControllerStyleActionSheet];
@@ -59,7 +60,6 @@
                                                           
                                                       }]];
     
- 
     
     [self presentViewController:alertController animated:YES completion:nil];
 }
@@ -78,7 +78,8 @@
     self.userProfileImageView.layer.cornerRadius=self.userProfileImageView.frame.size.width/2;
     
     if ([[NSUserDefaults standardUserDefaults]objectForKey:USER_IMAGE]) {
-    self.userProfileImageView.image=[[UIImage alloc]initWithData:[[NSUserDefaults standardUserDefaults]objectForKey:USER_IMAGE]];
+    
+            self.userProfileImageView.image=[[UIImage alloc]initWithData:[[NSUserDefaults standardUserDefaults]objectForKey:USER_IMAGE]];
     
     }
     
@@ -94,8 +95,6 @@
 
 
 }
-
-
 
 -(void) viewDidAppear:(BOOL)animated {
     
