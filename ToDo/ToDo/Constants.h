@@ -30,6 +30,10 @@ typedef NS_ENUM (NSInteger, TaskGroup) {
 static NSString *const USER_IMAGE               = @"USER_NAME";
 static NSString *const WALKTHROUGH_PRESENTED    = @"WALKTHROUGH_PRESENTED";
 
+// Notifications
+
+static NSString *const CITY_CHANGED             =@"CITY_CHANGED";
+
 
 //String and numbers
 
