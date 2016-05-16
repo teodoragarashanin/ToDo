@@ -129,9 +129,10 @@
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
    
+   
     TaskTableViewCell *cell= [tableView dequeueReusableCellWithIdentifier: @"Cell"
                                                              forIndexPath: indexPath];
-    cell.taskTitleLabel.text = [NSString stringWithFormat: @"Red %ld", indexPath.row];
+    cell.taskTitleLabel.text = [NSString stringWithFormat: @"Red %long", indexPath.row];
     
     switch (indexPath.row) {
         case COMPLETED_TASK_GROUP:

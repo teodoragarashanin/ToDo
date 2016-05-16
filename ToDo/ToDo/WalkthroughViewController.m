@@ -46,7 +46,7 @@
                                                     andImage:[UIImage imageNamed:@"phone"]],
                         [[WalkthroughItem alloc]initWithText:@"Quickly add tasks \n from home screen. "
                                                     andImage:[UIImage imageNamed:@"task"]]
-    
+                        
                         ];
     self.pageControl.numberOfPages=self.itemsArray.count;
     //self.closeButton.alpha=0.0;
