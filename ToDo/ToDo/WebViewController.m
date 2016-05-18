@@ -10,7 +10,6 @@
 
 
 @interface WebViewController () <UIWebViewDelegate>
-
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet UIButton *closeButton;
 @property (strong, nonatomic) UIDynamicAnimator *animator;
@@ -59,6 +58,16 @@
 -(void) viewDidLoad {
 
     [super viewDidLoad];
+    
+    //self.urlString = @"http://www.google.com";
+    
+
+    
+    if (self.urlString) {
+        
+        [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString: self.urlString]]];
+    }
+    
     self.closeButton.alpha = ZERO_VALUE;
 }
 
@@ -79,7 +88,7 @@
 
 -(UIStatusBarStyle) preferredStatusBarStyle {
     
-    return UIStatusBarStyleLightContent;
+    return UIStatusBarStyleDefault;
     
 }
 

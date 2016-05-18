@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface WebViewController : UIViewController
-
+@property (copy, nonatomic) NSString *urlString; //samo kod objekta NSString stoji copy, duboko kopiranje, zaostavstina
 @end

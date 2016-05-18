@@ -27,6 +27,7 @@ typedef NS_ENUM (NSInteger, TaskGroup) {
     IN_PROGRESS_TASK_GROUP
 };
 
+
 static NSString *const USER_IMAGE               = @"USER_NAME";
 static NSString *const WALKTHROUGH_PRESENTED    = @"WALKTHROUGH_PRESENTED";
 

@@ -9,10 +9,12 @@
 #import "HomeViewController.h"
 #import "TaskTableViewCell.h"
 #import "Constants.h"
+#import "MenuView.h"
 
 
-@interface HomeViewController () <UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface HomeViewController () <UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, MenuViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *userProfileImageView;
+@property (weak, nonatomic) IBOutlet MenuView *menuView;
 @end
 
 @implementation HomeViewController
@@ -83,9 +85,9 @@
     
     }
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self performSegueWithIdentifier:@"AboutSegue" sender:self];
-    });
+   // dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    //    [self performSegueWithIdentifier:@"AboutSegue" sender:self];
+   // });
     
     /*dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
      [self performSegueWithIdentifier:@"StatisticsSegue" sender:self];
@@ -102,7 +104,7 @@
     
     if (![[NSUserDefaults standardUserDefaults] boolForKey:WALKTHROUGH_PRESENTED]) {
         
-    [self performSegueWithIdentifier: @"WalkthroughSegue" sender:self];
+    //[self performSegueWithIdentifier: @"WalkthroughSegue" sender:self];
         
     }
     
@@ -116,18 +118,18 @@
 
 #pragma mark - UITableViewDataSource 
 
--(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
     return 2;
 }
 
--(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     return 3;
    
 }
 
--(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
    
    
     TaskTableViewCell *cell= [tableView dequeueReusableCellWithIdentifier: @"Cell"
@@ -192,5 +194,8 @@
 }
 
 #pragma mark - MenuViewDelegate
+
+-(void)menuViewOptionTapped:(MenuOption)option {}
+
 
 @end

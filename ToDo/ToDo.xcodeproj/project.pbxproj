@@ -33,6 +33,8 @@
 		D55067371CA974C300B715A2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D55067361CA974C300B715A2 /* CoreLocation.framework */; };
 		D55D750B1CDA1DD500BFE02C /* StatisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D55D750A1CDA1DD500BFE02C /* StatisticsViewController.m */; };
 		D55D750E1CDA2DA400BFE02C /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D55D750D1CDA2DA400BFE02C /* WebViewController.m */; };
+		D5CE0E741CEC880700E48F15 /* MenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = D5CE0E731CEC880700E48F15 /* MenuView.m */; };
+		D5CE0E761CEC884F00E48F15 /* MenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5CE0E751CEC884F00E48F15 /* MenuView.xib */; };
 		D5D02DB51CCE3D4900F7FFFF /* WalkthroughCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D5D02DB41CCE3D4900F7FFFF /* WalkthroughCollectionViewCell.m */; };
 		D5D02DB81CCE439800F7FFFF /* WalkthroughItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D5D02DB71CCE439800F7FFFF /* WalkthroughItem.m */; };
 		D5F28A2F1CC1181700D15D23 /* TaskTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D5F28A2E1CC1181700D15D23 /* TaskTableViewCell.m */; };
@@ -141,6 +143,9 @@
 		D55D750C1CDA2DA400BFE02C /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		D55D750D1CDA2DA400BFE02C /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		D55D750F1CDA352100BFE02C /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		D5CE0E721CEC880700E48F15 /* MenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuView.h; sourceTree = "<group>"; };
+		D5CE0E731CEC880700E48F15 /* MenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuView.m; sourceTree = "<group>"; };
+		D5CE0E751CEC884F00E48F15 /* MenuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuView.xib; sourceTree = "<group>"; };
 		D5D02DB31CCE3D4900F7FFFF /* WalkthroughCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WalkthroughCollectionViewCell.h; sourceTree = "<group>"; };
 		D5D02DB41CCE3D4900F7FFFF /* WalkthroughCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WalkthroughCollectionViewCell.m; sourceTree = "<group>"; };
 		D5D02DB61CCE439800F7FFFF /* WalkthroughItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WalkthroughItem.h; sourceTree = "<group>"; };
@@ -302,6 +307,9 @@
 				D55067201CA9670400B715A2 /* Main.storyboard */,
 				D54776E31CBE721100B54457 /* Pad.storyboard */,
 				D55067281CA9670400B715A2 /* LaunchScreen.storyboard */,
+				D5CE0E721CEC880700E48F15 /* MenuView.h */,
+				D5CE0E731CEC880700E48F15 /* MenuView.m */,
+				D5CE0E751CEC884F00E48F15 /* MenuView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -465,6 +473,7 @@
 			files = (
 				D550672A1CA9670400B715A2 /* LaunchScreen.storyboard in Resources */,
 				D55067271CA9670400B715A2 /* Assets.xcassets in Resources */,
+				D5CE0E761CEC884F00E48F15 /* MenuView.xib in Resources */,
 				D54776E41CBE721100B54457 /* Pad.storyboard in Resources */,
 				D55067221CA9670400B715A2 /* Main.storyboard in Resources */,
 			);
@@ -492,6 +501,7 @@
 				D538DA061CE357110075849B /* Task+CoreDataProperties.m in Sources */,
 				D5FD55F11CAC08F800D89F19 /* SignUpViewController.m in Sources */,
 				D55D750B1CDA1DD500BFE02C /* StatisticsViewController.m in Sources */,
+				D5CE0E741CEC880700E48F15 /* MenuView.m in Sources */,
 				D5D02DB51CCE3D4900F7FFFF /* WalkthroughCollectionViewCell.m in Sources */,
 				D50741E21CCA524B009FE61B /* WalkthroughViewController.m in Sources */,
 				D55D750E1CDA2DA400BFE02C /* WebViewController.m in Sources */,
