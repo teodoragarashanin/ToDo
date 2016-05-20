@@ -23,5 +23,5 @@ typedef NS_ENUM (NSInteger, MenuOption) {
 
 
 @interface MenuView : UIView
-@property (weak, nonatomic) id <MenuViewDelegate> delegate;
+@property (weak, nonatomic) IBOutlet id <MenuViewDelegate> delegate;
 @end

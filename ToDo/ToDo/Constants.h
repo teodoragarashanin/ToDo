@@ -15,9 +15,10 @@
 
 // Colors
 
-#define kOrangeColor        COLOR (254.0, 172.0, 73.0, 1.0);
-#define kPurpleColor        COLOR (187.0, 114.0, 255.0, 1.0);
-#define kTurquoiseColor     COLOR (72.0, 211.0, 194.0, 1.0);
+#define kOrangeColor        COLOR (254.0, 172.0, 73.0, 1.0)
+#define kPurpleColor        COLOR (187.0, 114.0, 255.0, 1.0)
+#define kTurquoiseColor     COLOR (72.0, 211.0, 194.0, 1.0)
+#define kDescPlaceholderColor     COLOR (29.0, 29.0, 38.0, 1.0)
 
 //Enums
 
@@ -28,8 +29,6 @@ typedef NS_ENUM (NSInteger, TaskGroup) {
 };
 
 
-static NSString *const USER_IMAGE               = @"USER_NAME";
-static NSString *const WALKTHROUGH_PRESENTED    = @"WALKTHROUGH_PRESENTED";
 
 // Notifications
 
@@ -40,5 +39,12 @@ static NSString *const CITY_CHANGED             =@"CITY_CHANGED";
 
 #define ZERO_VALUE      0.0
 
+static NSString *const USER_IMAGE               = @"USER_NAME";
+static NSString *const WALKTHROUGH_PRESENTED    = @"WALKTHROUGH_PRESENTED";
+static NSString *const EMPTY_STRING              = @"";
+static NSString *const OK_STRING                = @"OK";
 
+//urls
+
+static NSString *const CUBES_URL                =@"http://www.cubes.rs";
 #endif /* Constants_h */

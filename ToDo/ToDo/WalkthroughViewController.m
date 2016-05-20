@@ -40,15 +40,15 @@
     
     self.itemsArray = @[
                         
-                        [[WalkthroughItem alloc]initWithText:@"Keep your work organized and \n quickly check reminders \n with simple calendar. "
-                                                    andImage:[UIImage imageNamed:@"celendar"]],
-                        [[WalkthroughItem alloc]initWithText:@"Manage your tasks quick and easy \n from your phone. "
+                        [[WalkthroughItem alloc]initWithText:@"Keep your work organized and \nquickly check reminders \nwith simple calendar."
+                                                    andImage:[UIImage imageNamed:@"calendar"]],
+                        [[WalkthroughItem alloc]initWithText:@"Manage your tasks quick and easy \nfrom your phone. "
                                                     andImage:[UIImage imageNamed:@"phone"]],
-                        [[WalkthroughItem alloc]initWithText:@"Quickly add tasks \n from home screen. "
-                                                    andImage:[UIImage imageNamed:@"task"]]
+                        [[WalkthroughItem alloc]initWithText:@"Quickly add tasks \nfrom home screen. "
+                                                    andImage:[UIImage imageNamed:@"tasks"]]
                         
                         ];
-    self.pageControl.numberOfPages=self.itemsArray.count;
+    self.pageControl.numberOfPages = self.itemsArray.count;
     //self.closeButton.alpha=0.0;
 
 }

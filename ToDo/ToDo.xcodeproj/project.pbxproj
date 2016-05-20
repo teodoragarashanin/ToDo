@@ -37,6 +37,8 @@
 		D5CE0E761CEC884F00E48F15 /* MenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5CE0E751CEC884F00E48F15 /* MenuView.xib */; };
 		D5D02DB51CCE3D4900F7FFFF /* WalkthroughCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D5D02DB41CCE3D4900F7FFFF /* WalkthroughCollectionViewCell.m */; };
 		D5D02DB81CCE439800F7FFFF /* WalkthroughItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D5D02DB71CCE439800F7FFFF /* WalkthroughItem.m */; };
+		D5D7675E1CEF2B3A00023F5E /* TaskDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5D7675D1CEF2B3A00023F5E /* TaskDetailsViewController.m */; };
+		D5D767611CEF3F4D00023F5E /* UIViewController+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = D5D767601CEF3F4D00023F5E /* UIViewController+Utilities.m */; };
 		D5F28A2F1CC1181700D15D23 /* TaskTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D5F28A2E1CC1181700D15D23 /* TaskTableViewCell.m */; };
 		D5FD55EE1CAC061100D89F19 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5FD55ED1CAC061100D89F19 /* LogInViewController.m */; };
 		D5FD55F11CAC08F800D89F19 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5FD55F01CAC08F800D89F19 /* SignUpViewController.m */; };
@@ -150,6 +152,10 @@
 		D5D02DB41CCE3D4900F7FFFF /* WalkthroughCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WalkthroughCollectionViewCell.m; sourceTree = "<group>"; };
 		D5D02DB61CCE439800F7FFFF /* WalkthroughItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WalkthroughItem.h; sourceTree = "<group>"; };
 		D5D02DB71CCE439800F7FFFF /* WalkthroughItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WalkthroughItem.m; sourceTree = "<group>"; };
+		D5D7675C1CEF2B3A00023F5E /* TaskDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskDetailsViewController.h; sourceTree = "<group>"; };
+		D5D7675D1CEF2B3A00023F5E /* TaskDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskDetailsViewController.m; sourceTree = "<group>"; };
+		D5D7675F1CEF3F4D00023F5E /* UIViewController+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Utilities.h"; sourceTree = "<group>"; };
+		D5D767601CEF3F4D00023F5E /* UIViewController+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Utilities.m"; sourceTree = "<group>"; };
 		D5F28A2D1CC1181700D15D23 /* TaskTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskTableViewCell.h; sourceTree = "<group>"; };
 		D5F28A2E1CC1181700D15D23 /* TaskTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskTableViewCell.m; sourceTree = "<group>"; };
 		D5F28A301CC1183F00D15D23 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -320,6 +326,10 @@
 				D5F28A301CC1183F00D15D23 /* Constants.h */,
 				D550671D1CA9670400B715A2 /* ViewController.h */,
 				D550671E1CA9670400B715A2 /* ViewController.m */,
+				D5D7675F1CEF3F4D00023F5E /* UIViewController+Utilities.h */,
+				D5D767601CEF3F4D00023F5E /* UIViewController+Utilities.m */,
+				D5D7675C1CEF2B3A00023F5E /* TaskDetailsViewController.h */,
+				D5D7675D1CEF2B3A00023F5E /* TaskDetailsViewController.m */,
 				D5503C781CB7ECB00019B303 /* HomeViewController.h */,
 				D5503C791CB7ECB00019B303 /* HomeViewController.m */,
 				D5F28A2D1CC1181700D15D23 /* TaskTableViewCell.h */,
@@ -504,6 +514,8 @@
 				D5CE0E741CEC880700E48F15 /* MenuView.m in Sources */,
 				D5D02DB51CCE3D4900F7FFFF /* WalkthroughCollectionViewCell.m in Sources */,
 				D50741E21CCA524B009FE61B /* WalkthroughViewController.m in Sources */,
+				D5D767611CEF3F4D00023F5E /* UIViewController+Utilities.m in Sources */,
+				D5D7675E1CEF2B3A00023F5E /* TaskDetailsViewController.m in Sources */,
 				D55D750E1CDA2DA400BFE02C /* WebViewController.m in Sources */,
 				D5FD55EE1CAC061100D89F19 /* LogInViewController.m in Sources */,
 				D5F28A2F1CC1181700D15D23 /* TaskTableViewCell.m in Sources */,

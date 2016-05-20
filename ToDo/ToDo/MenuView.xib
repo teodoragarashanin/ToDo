@@ -49,7 +49,7 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qtf-Xe-Ij3" userLabel="Button3">
+                <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qtf-Xe-Ij3" userLabel="Button3">
                     <rect key="frame" x="120" y="96" width="30" height="30"/>
                     <color key="backgroundColor" red="0.91343330536912748" green="0.21809288749261743" blue="0.42308458487583894" alpha="1" colorSpace="calibratedRGB"/>
                     <connections>

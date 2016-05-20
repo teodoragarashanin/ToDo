@@ -22,7 +22,7 @@
 
 #pragma mark - Properties
 
--(void) setUserLocation:(CLLocation *)userLocation {
+-(void) setUserLocation:(CLLocation *) userLocation {
 
     _userLocation = userLocation;
     
