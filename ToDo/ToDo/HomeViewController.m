@@ -10,16 +10,29 @@
 #import "TaskTableViewCell.h"
 #import "Constants.h"
 #import "MenuView.h"
-
-
+#import "WalkthroughViewController.h"
+#import "WebViewController.h"
+#import "DataManager.h"
+#import "Task.h"
+#import "Helpers.h"
+#import "TaskDetailsViewController.h"
 
 
 @interface HomeViewController () <UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, MenuViewDelegate>
+
 @property (weak, nonatomic) IBOutlet UIImageView *userProfileImageView;
 @property (weak, nonatomic) IBOutlet MenuView *menuView;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIImageView *badgeImageView;
+@property (weak, nonatomic) IBOutlet UILabel *badgeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *welcomeLabel;
+@property (strong, nonatomic) NSMutableArray *itemsArray;
+
 @end
 
 @implementation HomeViewController
+
+#pragma mark - Properties
 
 -(void) pickImage {
     
@@ -31,11 +44,11 @@
                                                          style: UIAlertActionStyleDefault
                                                        handler:^(UIAlertAction * _Nonnull action) {
                                                            
-                                                        UIImagePickerController *pickerController = [[UIImagePickerController alloc]init];
-                                                        pickerController.sourceType =  UIImagePickerControllerSourceTypePhotoLibrary;
-                                                        pickerController.delegate=self;
-                                                        pickerController.allowsEditing=YES;
-                                                        [self presentViewController: pickerController animated:YES completion:nil];
+                                                           UIImagePickerController *pickerController = [[UIImagePickerController alloc]init];
+                                                           pickerController.sourceType =  UIImagePickerControllerSourceTypePhotoLibrary;
+                                                           pickerController.delegate=self;
+                                                           pickerController.allowsEditing=YES;
+                                                           [self presentViewController: pickerController animated:YES completion:nil];
                                                            
                                                        }]];
     
@@ -52,7 +65,7 @@
                                                               pickerController.delegate=self;
                                                               pickerController.allowsEditing=YES;
                                                               [self presentViewController: pickerController animated:YES completion:nil];
-
+                                                              
                                                               
                                                           }]];
     }
@@ -68,25 +81,20 @@
     [self presentViewController:alertController animated:YES completion:nil];
 }
 
+-(NSMutableArray *) itemsArray {
+
+    _itemsArray = [[DataManager sharedInstance] fetchEntity:NSStringFromClass([Task class]) withFilter:nil withSortAsc:YES forKey:@"date"]; //ucitava iz bazeee
+    return _itemsArray;
+
+}
+
 #pragma markv - View lifecycle
 
 -(void) viewDidLoad {
     
     [super viewDidLoad];
-    self.userProfileImageView.userInteractionEnabled=YES;
-    UITapGestureRecognizer *tap=[[UITapGestureRecognizer alloc]initWithTarget:self
-                                                                       action:@selector(pickImage)];
-    tap.numberOfTapsRequired=1;
-    [self.userProfileImageView addGestureRecognizer:tap];
-    self.userProfileImageView.clipsToBounds=YES;
-    self.userProfileImageView.layer.cornerRadius=self.userProfileImageView.frame.size.width/2;
-    
-    if ([[NSUserDefaults standardUserDefaults]objectForKey:USER_IMAGE]) {
-    
-            self.userProfileImageView.image=[[UIImage alloc]initWithData:[[NSUserDefaults standardUserDefaults]objectForKey:USER_IMAGE]];
-    
-    }
-    
+    [self configurProfileImage];
+
     // dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
     //    [self presentErrorWithTitle:@"Test" andError:@"GRESKA!"];
     //});
@@ -122,12 +130,12 @@
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
-    return 2;
+    return 1;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 3;
+    return self.itemsArray.count;
    
 }
 
@@ -161,7 +169,6 @@
     
 }
 
-
 #pragma mark - UITableViewDelegate
 
 -(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -193,6 +200,44 @@
 
     [picker dismissViewControllerAnimated:YES completion:NULL];
 
+}
+
+#pragma mark - Private API
+
+-(void)configureBadge {
+    
+    self.badgeImageView.alpha = (self.itemsArray.count == 0) ? ZERO_VALUE :1.0;
+    self.badgeLabel.alpha = (self.itemsArray.count == 0) ? ZERO_VALUE :1.0;
+    self.badgeLabel.text = [NSString stringWithFormat:@"%ld", self.itemsArray.count];
+}
+
+-(void)configurProfileImage {
+
+    self.userProfileImageView.userInteractionEnabled=YES;
+    UITapGestureRecognizer *tap=[[UITapGestureRecognizer alloc]initWithTarget:self
+                                                                       action:@selector(pickImage)];
+    tap.numberOfTapsRequired=1;
+    [self.userProfileImageView addGestureRecognizer:tap];
+    self.userProfileImageView.clipsToBounds=YES;
+    self.userProfileImageView.layer.cornerRadius=self.userProfileImageView.frame.size.width/2;
+    
+    if ([[NSUserDefaults standardUserDefaults]objectForKey:USER_IMAGE]) {
+        
+        self.userProfileImageView.image=[[UIImage alloc]initWithData:[[NSUserDefaults standardUserDefaults]objectForKey:USER_IMAGE]];
+        
+    }
+    
+
+}
+
+-(void) configureWelcomeLabel {
+    
+    if ([Helpers isMorning]) {
+        self.welcomeLabel.text = @"Good Morning";
+    } else {
+        self.welcomeLabel.text = @"Good Afternoon";
+    }
+ 
 }
 
 #pragma mark - MenuViewDelegate

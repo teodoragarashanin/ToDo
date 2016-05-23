@@ -784,8 +784,12 @@
                     <navigationItem key="navigationItem" id="Cik-3i-JJf"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="badgeImageView" destination="u7k-bf-NGX" id="CZn-GD-fub"/>
+                        <outlet property="badgeLabel" destination="n6O-W8-Vzs" id="qsn-mn-5cX"/>
                         <outlet property="menuView" destination="2t7-iW-GKi" id="Q0C-XY-Rsg"/>
+                        <outlet property="tableView" destination="LhH-t3-Eev" id="3up-qa-6pO"/>
                         <outlet property="userProfileImageView" destination="eOD-LU-Rg7" id="MOp-wa-aki"/>
+                        <outlet property="welcomeLabel" destination="mNA-TL-Jtr" id="od2-sr-tKy"/>
                         <segue destination="HIE-qq-Gl8" kind="push" identifier="WalkthroughSegue" id="WUp-Ea-agX"/>
                         <segue destination="gbI-Oy-NW4" kind="push" identifier="StatisticsSegue" id="ER4-sg-MGu"/>
                         <segue destination="2T0-WP-zUA" kind="modal" identifier="AboutSegue" id="C2n-8N-XDd"/>

@@ -58,6 +58,7 @@
 #pragma mark - Public API
 
 +(instancetype) sharedInstance {
+    
     static DataManager *sharedManager;
     
     @synchronized (self) {
@@ -83,7 +84,8 @@
     
     if (sortKey != nil) {
         NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey: sortKey ascending:sortAscending];
-        NSArray *sortDescriptors = [[NSArray alloc] initWithObjects: sortDescriptor, nil]; //NSArray *sortDescriptors=@[sortDescriptor];
+        //NSArray *sortDescriptors = [[NSArray alloc] initWithObjects: sortDescriptor, nil];
+        NSArray *sortDescriptors=@[sortDescriptor];
         [fetchRequest setSortDescriptors:sortDescriptors];
         
     }
@@ -96,10 +98,10 @@
     }
     
     NSError *error;
-    NSMutableArray *resultArray = [[self.managedObjectContext executeRequest:fetchRequest error:&error]mutableCopy]; //&error prenosi se po referenci // mutableCopy da bi vratio MutableArray
+    //NSMutableArray *resultArray = [[self.managedObjectContext executeRequest:fetchRequest error:&error]mutableCopy]; //&error prenosi se po referenci // mutableCopy da bi vratio MutableArray
     
-    //NSArray *array = [self.manageObjectCintext executeFetchRequest: fetchRequest error:&error]; //moze i ovako da bi vratio MUtable Array
-    //NSMUtablearray *resultArray = [NSMutableArray arrayWithArray:array];
+    NSArray *array = [self.managedObjectContext executeFetchRequest: fetchRequest error:&error]; //moze i ovako da bi vratio MUtable Array
+    NSMutableArray *resultArray = [NSMutableArray arrayWithArray:array];
     
     if (resultArray == nil) NSLog(@"Error fetching %@(s).", entityName);
     

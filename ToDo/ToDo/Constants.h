@@ -35,6 +35,7 @@ typedef NS_ENUM (NSInteger, TaskGroup) {
 static NSString *const CITY_CHANGED             =@"CITY_CHANGED";
 
 
+
 //String and numbers
 
 #define ZERO_VALUE      0.0
@@ -43,6 +44,7 @@ static NSString *const USER_IMAGE               = @"USER_NAME";
 static NSString *const WALKTHROUGH_PRESENTED    = @"WALKTHROUGH_PRESENTED";
 static NSString *const EMPTY_STRING              = @"";
 static NSString *const OK_STRING                = @"OK";
+static NSString *const LOGGED_IN                =@"LOGGED_IN";
 
 //urls
 

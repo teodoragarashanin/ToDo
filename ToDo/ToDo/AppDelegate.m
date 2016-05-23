@@ -7,22 +7,42 @@
 //
 
 #import "AppDelegate.h"
+#import "DataManager.h"
+#import <CoreLocation/CoreLocation.h>
 
+@interface AppDelegate () <CLLocationManagerDelegate>
+@property (strong, nonatomic) CLLocationManager *locationManager;
+@end
 @implementation AppDelegate
 
+
+#pragma mark - UIApplicationDelegate
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-       return YES;
+    
+   // [self registerForNotification];
+    [self configureLocationManager];
+    
+    
+    
+    return YES;
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     [self saveContext];
 }
 
+
+
 #pragma mark - Core Data stack
 
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
+
+
+
+#pragma mark - Properties
 
 - (NSURL *)applicationDocumentsDirectory {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
@@ -72,7 +92,8 @@
     return _managedObjectContext;
 }
 
-#pragma mark - Core Data Saving support
+
+#pragma mark - Public API
 
 - (void)saveContext {
     NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
@@ -83,6 +104,35 @@
             abort();
         }
     }
+}
+
+
+#pragma mark - Private API
+
+//-(void)registerForNotification {}
+
+-(void)configureLocationManager {
+    
+    self.locationManager = [[CLLocationManager alloc]init];
+    self.locationManager.delegate = self;
+    [self.locationManager requestAlwaysAuthorization];
+    [self.locationManager startMonitoringSignificantLocationChanges];
+    
+}
+
+
+#pragma mark - CLLocationManagerDelegate
+
+-(void) locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations{
+    if (locations.count >0) {
+        [DataManager sharedInstance].userLocation = [locations firstObject];
+    }
+    
+}
+
+-(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
+    NSLog (@"Location manager error: %@", [error localizedDescription]);
+    
 }
 
 @end

@@ -31,6 +31,7 @@
 		D55067271CA9670400B715A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D55067261CA9670400B715A2 /* Assets.xcassets */; };
 		D550672A1CA9670400B715A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D55067281CA9670400B715A2 /* LaunchScreen.storyboard */; };
 		D55067371CA974C300B715A2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D55067361CA974C300B715A2 /* CoreLocation.framework */; };
+		D559E5041CF33D2500550C90 /* Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = D559E5031CF33D2500550C90 /* Helpers.m */; };
 		D55D750B1CDA1DD500BFE02C /* StatisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D55D750A1CDA1DD500BFE02C /* StatisticsViewController.m */; };
 		D55D750E1CDA2DA400BFE02C /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D55D750D1CDA2DA400BFE02C /* WebViewController.m */; };
 		D5CE0E741CEC880700E48F15 /* MenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = D5CE0E731CEC880700E48F15 /* MenuView.m */; };
@@ -140,6 +141,8 @@
 		D55067291CA9670400B715A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D550672B1CA9670400B715A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D55067361CA974C300B715A2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		D559E5021CF33D2500550C90 /* Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helpers.h; sourceTree = "<group>"; };
+		D559E5031CF33D2500550C90 /* Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helpers.m; sourceTree = "<group>"; };
 		D55D75091CDA1DD500BFE02C /* StatisticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatisticsViewController.h; sourceTree = "<group>"; };
 		D55D750A1CDA1DD500BFE02C /* StatisticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatisticsViewController.m; sourceTree = "<group>"; };
 		D55D750C1CDA2DA400BFE02C /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
@@ -324,6 +327,8 @@
 			isa = PBXGroup;
 			children = (
 				D5F28A301CC1183F00D15D23 /* Constants.h */,
+				D559E5021CF33D2500550C90 /* Helpers.h */,
+				D559E5031CF33D2500550C90 /* Helpers.m */,
 				D550671D1CA9670400B715A2 /* ViewController.h */,
 				D550671E1CA9670400B715A2 /* ViewController.m */,
 				D5D7675F1CEF3F4D00023F5E /* UIViewController+Utilities.h */,
@@ -513,6 +518,7 @@
 				D55D750B1CDA1DD500BFE02C /* StatisticsViewController.m in Sources */,
 				D5CE0E741CEC880700E48F15 /* MenuView.m in Sources */,
 				D5D02DB51CCE3D4900F7FFFF /* WalkthroughCollectionViewCell.m in Sources */,
+				D559E5041CF33D2500550C90 /* Helpers.m in Sources */,
 				D50741E21CCA524B009FE61B /* WalkthroughViewController.m in Sources */,
 				D5D767611CEF3F4D00023F5E /* UIViewController+Utilities.m in Sources */,
 				D5D7675E1CEF2B3A00023F5E /* TaskDetailsViewController.m in Sources */,

@@ -8,12 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import <MapKit/Mapkit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Task : NSManagedObject
+@interface Task : NSManagedObject <MKAnnotation>
 
-// Insert code here to declare functionality of your managed object subclass
+-(BOOL) isLocationValid;
 
 @end
 
