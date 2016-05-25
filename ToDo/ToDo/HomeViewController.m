@@ -16,6 +16,8 @@
 #import "Task.h"
 #import "Helpers.h"
 #import "TaskDetailsViewController.h"
+#import "WebViewController.h"
+#import "TaskDetailsViewController.h"
 
 
 @interface HomeViewController () <UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, MenuViewDelegate>
@@ -27,6 +29,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *badgeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *welcomeLabel;
 @property (strong, nonatomic) NSMutableArray *itemsArray;
+@property (strong, nonatomic) Task *selectedTask;
 
 @end
 
@@ -94,6 +97,11 @@
     
     [super viewDidLoad];
     [self configurProfileImage];
+    [self configureWelcomeLabel];
+    
+    //self.menuView.delegate = self; // povezan je delegat iz tabele u storyboardu
+    self.tableView.tableFooterView = [[UIView alloc] init];
+   
 
     // dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
     //    [self presentErrorWithTitle:@"Test" andError:@"GRESKA!"];
@@ -103,8 +111,14 @@
     // [self performSegueWithIdentifier:@"TaskDetailsSegue" sender:self];
      //});
     
-    
 
+}
+
+-(void) viewWillAppear:(BOOL)animated {
+
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
+    [self configureBadge];
 
 }
 
@@ -114,7 +128,7 @@
     
     if (![[NSUserDefaults standardUserDefaults] boolForKey:WALKTHROUGH_PRESENTED]) {
         
-    //[self performSegueWithIdentifier: @"WalkthroughSegue" sender:self];
+        [self performSegueWithIdentifier: @"WalkthroughSegue" sender:self];
         
     }
     
@@ -124,6 +138,20 @@
     
     return UIStatusBarStyleLightContent;
     
+}
+
+#pragma mark - Sugue Management
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"AboutSegue"]) {
+        WebViewController *webViewController = (WebViewController *) segue.destinationViewController;
+        webViewController.urlString = CUBES_URL;
+    }
+    
+    if ([segue.identifier isEqualToString:@"TaskDetailsSegue"]) {
+        TaskDetailsViewController *taskDetailsViewController = (TaskDetailsViewController *) segue.destinationViewController;
+        taskDetailsViewController.task = self.selectedTask;
+    }
 }
 
 #pragma mark - UITableViewDataSource 
@@ -142,37 +170,45 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
    
    
-    TaskTableViewCell *cell= [tableView dequeueReusableCellWithIdentifier: @"Cell"
-                                                             forIndexPath: indexPath];
-    cell.taskTitleLabel.text = [NSString stringWithFormat: @"Red %long", indexPath.row];
+    TaskTableViewCell *cell= [tableView dequeueReusableCellWithIdentifier: @"Cell"];
     
-    switch (indexPath.row) {
-        case COMPLETED_TASK_GROUP:
-            cell.taskGroupView.backgroundColor = kTurquoiseColor;
-            break;
-        case NOT_COMPLETED_TASK_GROUP:
-            cell.taskGroupView.backgroundColor = kOrangeColor;
-            break;
-            
-        case IN_PROGRESS_TASK_GROUP:
-            cell.taskGroupView.backgroundColor = kPurpleColor;
-            break;
-        default:
-            cell.taskGroupView.backgroundColor = kTurquoiseColor;
-            break;
-    }
-    
-    
+    Task *task = [self.itemsArray objectAtIndex:indexPath.row];
+    cell.task = task;
     return cell;
     
+    //cell.task = self.itemsArray[indexPath.row];
     
+    
+}
+
+-(BOOL) tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return YES;
+}
+
+-(void) tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        Task *task =[self.itemsArray objectAtIndex:indexPath.row];
+        [[DataManager sharedInstance] deleteObjectInDatabase:task];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+        [tableView reloadData];
+        [self configureBadge];
+    }
     
 }
 
 #pragma mark - UITableViewDelegate
 
--(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 70;
+-(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    Task *task = [self.itemsArray objectAtIndex:indexPath.row];
+    self.selectedTask =task;
+    [self performSegueWithIdentifier:@"TaskDetailsSegue" sender:nil];
+
 }
 
 #pragma mark - UIImagePickerControllerDelegate
@@ -230,7 +266,7 @@
 
 }
 
--(void) configureWelcomeLabel {
+-(void)configureWelcomeLabel {
     
     if ([Helpers isMorning]) {
         self.welcomeLabel.text = @"Good Morning";
@@ -247,6 +283,7 @@
 
     switch (option) {
         case TASK_DETAILS_MENU_OPTION: {
+            self.selectedTask = nil;
             [self performSegueWithIdentifier:@"TaskDetailsSegue" sender:nil];
         } break;
             
@@ -272,6 +309,5 @@
 
 
 }
-
 
 @end

@@ -44,10 +44,10 @@
             point = self.completedView.center;
             break;
         case NOT_COMPLETED_TASK_GROUP:
-            point = self.completedView.center;
+            point = self.notCompletedView.center;
             break;
         case IN_PROGRESS_TASK_GROUP:
-            point = self.completedView.center;
+            point = self.inProgressView.center;
             break;
         
         default:

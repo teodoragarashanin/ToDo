@@ -49,4 +49,45 @@ static NSString *const LOGGED_IN                =@"LOGGED_IN";
 //urls
 
 static NSString *const CUBES_URL                =@"http://www.cubes.rs";
+
+
+
+
+
+//SAMOSTALNI PROJEKAT
+
+// 4,5 ekrana, 5 VC
+// modalne push
+// obavezno koristiti neki API ze nesto, kako integrisati third party, cocoa pods ??? npr google maps, ali nema networking
+// obavezno pored third party biblioteke je obavezna komunikacija sa nekim web servisom, json npr networking
+// integrisati Facebook i Twitter Google+, integracija yt mada on ide samo preko linka
+// od 12 do 24
+// av audio player za pustanje zvuka, ukoliko bude potrebno
+// facebook for developers
+// twiter ios sdk integration Fabric skinuti
+// Google sign in nije vise google+
+// mobile-patterns.com//
+// obavezno git
+// prezentacija aplikacije
+// iconfinder
+// u photoshopu da se dobiju sve tri rezolucije
+// nasledjivanje npr tab bar, moze da se naslediiii!!! i onda mu promeniti karakteristiku
+// side menu!!!!!!!!!!!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #endif /* Constants_h */

@@ -152,6 +152,7 @@
     
     self.menuOpened = YES;
     
+ 
     self.button1.alpha = 1.0;
     
     [UIView animateWithDuration:kAnimationDuration animations:^{
