@@ -33,6 +33,8 @@ typedef NS_ENUM (NSInteger, TaskGroup) {
 // Notifications
 
 static NSString *const CITY_CHANGED             =@"CITY_CHANGED";
+static NSString *const SHOW_HOME                =@"SHOW_HOME";
+static NSString *const SHOW_LOGIN                =@"SHOW_LOGIN";
 
 
 

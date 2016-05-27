@@ -26,7 +26,7 @@
 -(IBAction)submitButtonTapped;
 -(void) configureTextFieldPlaceholders;
 -(void) registerForNotifications;
--(void) prepareForAnimation;
+-(void) prepareForAnimations;
 -(void) animate;
 
 

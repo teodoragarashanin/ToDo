@@ -51,6 +51,40 @@
     
 }
 
+-(void) registerForNotifications {
+
+    [[NSNotificationCenter defaultCenter] addObserverForName:UIKeyboardWillShowNotification
+                                                      object:nil
+                                                       queue:[NSOperationQueue mainQueue]
+                                                  usingBlock:^(NSNotification *note)
+    {
+        NSDictionary *keyboardInfo = note.userInfo;
+        NSValue *keyboardFrameBegin = [keyboardInfo valueForKey: UIKeyboardFrameBeginUserInfoKey];
+        CGRect keyboardFrameBeginRect = keyboardFrameBegin.CGRectValue;
+        
+        [UIView animateWithDuration:0.3 animations:^{
+            CGRect frame = self.containerView.frame;
+            frame.origin.y = self.view.frame.size.height - keyboardFrameBeginRect.size.height - self.containerView.frame.size.height;
+            self.containerView.frame = frame;
+        }];
+    }];
+    
+    [[NSNotificationCenter defaultCenter] addObserverForName:UIKeyboardWillHideNotification
+                                                      object:nil
+                                                       queue:[NSOperationQueue mainQueue]
+                                                  usingBlock:^(NSNotification *note)
+     {
+         
+         [UIView animateWithDuration:0.3 animations:^{
+             CGRect frame = self.containerView.frame;
+             frame.origin.y = self.containerViewOriginY;
+             self.containerView.frame = frame;
+         }];
+     }];
+
+    
+}
+
 #pragma mark - Public API
 
 -(void) prepareForAnimations {
@@ -69,10 +103,13 @@
 
 -(void) animate {
     
+    [UIView animateWithDuration:3.0 animations:^{
+        self.maskLogoView.alpha = ZERO_VALUE;
+    }];
     
     //button & footer & maskLogo
     [UIView animateWithDuration:0.4 delay:0.2
-                        options:UIViewAnimationOptionCurveEaseIn
+                        options:UIViewAnimationOptionCurveEaseInOut
                      animations:^{
                         CGRect submitButtonFrame = self.submitButton.frame;
                          submitButtonFrame.origin.x=0.0;
@@ -80,7 +117,7 @@
                          CGRect frame = self.footerView.frame;
                          frame.origin.y=625;
                          self.footerView.frame=frame;
-                         self.maskLogoView.alpha=0.0;
+                         //self.maskLogoView.alpha=0.0;
        }            completion:nil];
  
 }
@@ -124,6 +161,7 @@
 #pragma mark - View lifecycle
 
 -(void) viewWillAppear:(BOOL)animated{
+   
     [super viewWillAppear:animated];
     [self prepareForAnimations];
     [self.activityIndicatorView stopAnimating];
@@ -131,12 +169,14 @@
 }
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
-    
     [self configureTextFieldPlaceholders];
+    [self registerForNotifications];
+    self.containerViewOriginY = self.containerView.frame.origin.y;
     
-    [self configureTextField:self.usernameTextField];
-    [self configureTextField:self.passwordTextField];
+   // [self configureTextField:self.usernameTextField];
+   //[self configureTextField:self.passwordTextField];
   
 }
 
@@ -164,31 +204,25 @@
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
-    [UIView animateWithDuration:10.0
-                          delay:0.0
-         usingSpringWithDamping:0.4
-          initialSpringVelocity:10.0
-                        options:UIViewAnimationOptionCurveEaseIn
-                     animations:^{
-                         CGRect frame = self.containerView.frame;
-                         frame.origin.y = frame.origin.y - kConstant;
-                         self.containerView.frame = frame;
-                     }
-                     completion:nil];
+    
+    if (textField == self.usernameTextField) {
+        self.usernameImageView.image = [UIImage imageNamed:@"username-active"];
+    }
+    
+    if (textField == self.passwordTextField) {
+        self.passwordImageView.image = [UIImage imageNamed:@"password-active"];
+    }
+    
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-    [UIView animateWithDuration:1.0
-                          delay:0.0
-         usingSpringWithDamping:0.4
-          initialSpringVelocity:10.0
-                        options:UIViewAnimationOptionCurveEaseIn
-                     animations:^{
-                         CGRect frame = self.containerView.frame;
-                         frame.origin.y = frame.origin.y + kConstant;
-                         self.containerView.frame = frame;
-                     }
-                     completion:nil];
+
+    self.usernameImageView.image = [UIImage imageNamed:@"username"];
+    self.passwordImageView.image = [UIImage imageNamed:@"password"];
 }
 
+
 @end
+
+//command+shift+f -  pretraga po kodu
+//command+shift+o - trazi fajl
